@@ -23,22 +23,11 @@
 						<i class="glyphicon glyphicon-chevron-left icon-white"></i>
 						<g:message code="error.button.backToHome"/>
 					</a>
-					<a href="${createLink(uri: '/login')}" class="btn btn-large btn-success">
-						<i class="glyphicon glyphicon-user"></i>
-						<g:message code="error.button.Login"/>
-					</a>					
+
 				</div>
 			</div>
 		</div>
 	</section>
-
-<script type='text/javascript'>
-	<!--
-	(function() {
-		document.forms['loginForm'].elements['j_username'].focus();
-	})();
-	// -->
-</script>
 
 </body>
 </html>

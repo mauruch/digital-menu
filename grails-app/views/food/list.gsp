@@ -19,7 +19,8 @@
 
 				<g:sortableColumn property="name" title="${message(code: 'food.name.label', default: 'Name')}" />
 			
-				<th><g:message code="food.category.label" default="Category" /></th>
+				%{--<th><g:message code="food.category.label" default="Category" /></th>--}%
+				<g:sortableColumn property="category" title="${message(code: 'food.category.label', default: 'Categoría')}" />
 			
 				<g:sortableColumn property="description" title="${message(code: 'food.description.label', default: 'Description')}" />
 			
@@ -34,8 +35,10 @@
 		<tbody>
 		<g:each in="${foodInstanceList}" status="i" var="foodInstance">
 			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-			
-				<td><g:link action="show" id="${foodInstance.id}">${fieldValue(bean: foodInstance, field: "category")}</g:link></td>
+
+				<td><g:link action="show" id="${foodInstance.id}">${fieldValue(bean: foodInstance, field: "name")}</g:link></td>
+
+				<td>${fieldValue(bean: foodInstance, field: "category")}</td>
 			
 				<td>${fieldValue(bean: foodInstance, field: "description")}</td>
 			
@@ -44,9 +47,7 @@
 				<td><g:formatBoolean boolean="${foodInstance.isGlutenFree}" /></td>
 			
 				<td><g:formatBoolean boolean="${foodInstance.isVegetarian}" /></td>
-			
-				<td>${fieldValue(bean: foodInstance, field: "name")}</td>
-			
+
 			</tr>
 		</g:each>
 		</tbody>

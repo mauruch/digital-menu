@@ -4,7 +4,7 @@
 		<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 			<li class="controller">
 				<g:link controller="${c.logicalPropertyName}">
-					<g:if test="${c.fullName.contains('HomeController')}">
+					<g:if test="${c.fullName.contains('IndexController')}">
 						<i class="glyphicon glyphicon-home"></i>
 					</g:if>
 					<g:elseif test="${c.fullName.contains('DemoPageController')}">

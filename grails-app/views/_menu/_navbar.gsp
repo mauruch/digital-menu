@@ -18,9 +18,9 @@
 
 		<div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
 
-		<ul class="nav navbar-nav">
-			<g:render template="/_menu/controller"/>
-		</ul>
+		%{--<ul class="nav navbar-nav">--}%
+			%{--<g:render template="/_menu/controller"/>--}%
+		%{--</ul>--}%
 
     	<ul class="nav navbar-nav navbar-right">
  			%{--<g:render template="/_menu/search"/> --}%

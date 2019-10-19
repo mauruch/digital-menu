@@ -3,7 +3,7 @@
 <html lang="${session.'org.springframework.web.servlet.i18n.SessionLocaleResolver.LOCALE'}">
 
 <head>
-	<title><g:layoutTitle default="${meta(name:'app.name')}" /></title>
+	%{--<title><g:layoutTitle default="${meta(name:'app.name')}" /></title>--}%
 	
     <meta charset="utf-8">
     <meta name="viewport"		content="width=device-width, initial-scale=1.0">
@@ -20,6 +20,7 @@
 	<r:require modules="jquery"/> <%-- jQuery is required for Bootstrap! --%>
 	<r:require modules="bootstrap"/>
 	<r:require modules="bootstrap_utils"/>
+	<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 
 	<r:layoutResources />
 	<g:layoutHead />
@@ -50,7 +51,7 @@
 	    <g:pageProperty name="page.footer" />
 	</g:if>
 	<g:else>
-		<g:render template="/layouts/footer"/>														
+		<g:render template="/layouts/footer"/>
 	</g:else>
 
 	<!-- Enable to insert additional components (e.g., modals, javascript, etc.) by any individual page -->

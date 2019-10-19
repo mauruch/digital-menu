@@ -12,14 +12,14 @@ class UrlMappings {
 		"/contact"		(view:"/siteinfo/contact")
 		"/terms"		(view:"/siteinfo/terms")
 		"/imprint"		(view:"/siteinfo/imprint")
-		"/nextSteps"	(view:"/home/nextSteps")
+		"/nextSteps"	(view:"/index/nextSteps")
 
 		/*
 		 * Pages with controller
 		 * WARN: No domain/controller should be named "api" or "mobile" or "web"!
 		 */
         "/"	{
-			controller	= 'home'
+			controller	= 'index'
 			action		= { 'index' }
             view		= { 'index' }
         }
