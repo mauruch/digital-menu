@@ -41,4 +41,6 @@
 # "temporary" build files
 /target
 
+.slcache/
+
 # End of https://www.gitignore.io/api/grails
