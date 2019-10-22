@@ -47,6 +47,7 @@ class UserController {
         }
 
         userInstance.save flush:true
+        UserRole.create userInstance, Role.findByAuthority("ROLE_USER")
 
         request.withFormat {
             form {
