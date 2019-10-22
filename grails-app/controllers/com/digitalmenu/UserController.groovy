@@ -93,6 +93,7 @@ class UserController {
             return
         }
 
+        UserRole.findByUser(userInstance).delete flush:true
         userInstance.delete flush:true
 
         request.withFormat {
