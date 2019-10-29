@@ -16,14 +16,16 @@ class MenuController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-	def index(Integer max) {
+    @Secured(["permitAll"])
+    def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Menu.list(params), model:[menuInstanceCount: Menu.count()]
+        respond Menu.list(params), view: 'list', model: [menuInstanceCount: Menu.count()]
     }
 
-	def list(Integer max) {
+    @Secured(["permitAll"])
+    def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Menu.list(params), model:[menuInstanceCount: Menu.count()]
+        respond Menu.list(params), model: [menuInstanceCount: Menu.count()]
     }
 
     def show(Menu menuInstance) {
@@ -31,7 +33,8 @@ class MenuController {
     }
 
     def create() {
-        respond new Menu(params)
+        Map<String, List<Category>> categories = com.digitalmenu.Food.list().groupBy({ food -> food.category.code })
+        respond new Menu(params), model: [categories: categories]
     }
 
     @Transactional
@@ -42,11 +45,11 @@ class MenuController {
         }
 
         if (menuInstance.hasErrors()) {
-            respond menuInstance.errors, view:'create'
+            respond menuInstance.errors, view: 'create'
             return
         }
 
-        menuInstance.save flush:true
+        menuInstance.save flush: true
 
         request.withFormat {
             form {
@@ -69,18 +72,18 @@ class MenuController {
         }
 
         if (menuInstance.hasErrors()) {
-            respond menuInstance.errors, view:'edit'
+            respond menuInstance.errors, view: 'edit'
             return
         }
 
-        menuInstance.save flush:true
+        menuInstance.save flush: true
 
         request.withFormat {
             form {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Menu.label', default: 'Menu'), menuInstance.id])
                 redirect menuInstance
             }
-            '*'{ respond menuInstance, [status: OK] }
+            '*' { respond menuInstance, [status: OK] }
         }
     }
 
@@ -92,14 +95,14 @@ class MenuController {
             return
         }
 
-        menuInstance.delete flush:true
+        menuInstance.delete flush: true
 
         request.withFormat {
             form {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Menu.label', default: 'Menu'), menuInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -109,7 +112,7 @@ class MenuController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'menuInstance.label', default: 'Menu'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }

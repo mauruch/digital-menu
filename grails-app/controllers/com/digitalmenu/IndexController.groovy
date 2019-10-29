@@ -2,9 +2,10 @@ package com.digitalmenu
 
 import org.springframework.security.access.annotation.Secured
 
-@Secured(["ROLE_USER", "ROLE_ADMIN"])
+@Secured(["permitAll"])
 class IndexController {
 
 	def index() {
+		redirect(controller: 'menu', action: 'list')
 	}
 }

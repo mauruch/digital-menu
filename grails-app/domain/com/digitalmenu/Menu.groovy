@@ -9,6 +9,7 @@ class Menu {
     Float price
     Food starter
     Food mainDish
+    Food drink
     Food dessert
 
 	/* Default (injected) attributes of GORM */

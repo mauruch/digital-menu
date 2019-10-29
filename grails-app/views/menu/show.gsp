@@ -19,14 +19,14 @@
 			<tr class="prop">
 				<td valign="top" class="name"><g:message code="menu.dessert.label" default="Dessert" /></td>
 				
-				<td valign="top" class="value"><g:link controller="food" action="show" id="${menuInstance?.dessert?.id}">${menuInstance?.dessert?.encodeAsHTML()}</g:link></td>
-				
+				<td valign="top" class="value"><g:link controller="food" action="show" id="${menuInstance?.dessert?.id}">${fieldValue(bean: menuInstance, field: "dessert.name")}</g:link></td>
+
 			</tr>
 		
 			<tr class="prop">
 				<td valign="top" class="name"><g:message code="menu.mainDish.label" default="Main Dish" /></td>
 				
-				<td valign="top" class="value"><g:link controller="food" action="show" id="${menuInstance?.mainDish?.id}">${menuInstance?.mainDish?.encodeAsHTML()}</g:link></td>
+				<td valign="top" class="value"><g:link controller="food" action="show" id="${menuInstance?.mainDish?.id}">${fieldValue(bean: menuInstance, field: "mainDish.name")}</g:link></td>
 				
 			</tr>
 		
@@ -47,7 +47,7 @@
 			<tr class="prop">
 				<td valign="top" class="name"><g:message code="menu.starter.label" default="Starter" /></td>
 				
-				<td valign="top" class="value"><g:link controller="food" action="show" id="${menuInstance?.starter?.id}">${menuInstance?.starter?.encodeAsHTML()}</g:link></td>
+				<td valign="top" class="value"><g:link controller="food" action="show" id="${menuInstance?.starter?.id}">${fieldValue(bean: menuInstance, field: "starter.name")}</g:link></td>
 				
 			</tr>
 		

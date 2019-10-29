@@ -31,6 +31,7 @@ class Food {
     }
     
 	static	constraints = {
+        description nullable: true
     }
 	
 	/*

@@ -6,6 +6,7 @@ package com.digitalmenu
  */
 class Category {
     String name
+	String code
 
 	/* Default (injected) attributes of GORM */
 //	Long	id
