@@ -22,12 +22,12 @@ This menu is used to show function that can be triggered on the content (an obje
 
 		<g:if test="${ params.action == 'show' || params.action == 'edit' }">
 			<!-- the item is an object (not a list) -->
-			<li class="${ params.action == "edit" ? 'active' : '' }">
-				<g:link action="edit" id="${params.id}"><i class="glyphicon glyphicon-pencil"></i> <g:message code="default.edit.label"  args="[entityName]"/></g:link>
-			</li>
-			<li class="">
-				<g:render template="/_common/modals/deleteTextLink"/>
-			</li>
+			%{--<li class="${ params.action == "edit" ? 'active' : '' }">--}%
+				%{--<g:link action="edit" id="${params.id}"><i class="glyphicon glyphicon-pencil"></i> <g:message code="default.edit.label"  args="[entityName]"/></g:link>--}%
+			%{--</li>--}%
+			%{--<li class="">--}%
+				%{--<g:render template="/_common/modals/deleteTextLink"/>--}%
+			%{--</li>--}%
 		</g:if>
 		
 	</ul>
