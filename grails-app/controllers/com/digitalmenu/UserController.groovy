@@ -1,6 +1,7 @@
 package com.digitalmenu
 
 import org.springframework.security.access.annotation.Secured
+import org.springframework.security.core.Authentication
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional

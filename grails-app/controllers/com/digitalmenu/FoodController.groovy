@@ -16,11 +16,13 @@ class FoodController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    @Secured(["permitAll"])
 	def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Food.list(params), model:[foodInstanceCount: Food.count()]
     }
 
+    @Secured(["permitAll"])
 	def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Food.list(params), model:[foodInstanceCount: Food.count()]

@@ -14,3 +14,10 @@
 	</ul>
 </li>
 </sec:ifLoggedIn>
+<sec:ifNotLoggedIn>
+	<li class="">
+		<a href="${createLink(uri: '/login/auth')}">
+			Ingresar
+		</a>
+	</li>
+</sec:ifNotLoggedIn>

@@ -1,26 +1,26 @@
-<%@ page import="com.digitalmenu.Food" %>
+<%@ page import="com.digitalmenu.PaymentMethods" %>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<meta name="layout" content="kickstart" />
-	<g:set var="entityName" value="${message(code: 'food.label', default: 'Plato')}" />
+	<g:set var="entityName" value="${message(code: 'paymentMethods.label', default: 'PaymentMethods')}" />
 	<title><g:message code="default.edit.label" args="[entityName]" /></title>
 </head>
 
 <body>
 
-	<section id="edit-food" class="first">
+	<section id="edit-paymentMethods" class="first">
 
-		<g:hasErrors bean="${foodInstance}">
+		<g:hasErrors bean="${paymentMethodsInstance}">
 		<div class="alert alert-danger">
-			<g:renderErrors bean="${foodInstance}" as="list" />
+			<g:renderErrors bean="${paymentMethodsInstance}" as="list" />
 		</div>
 		</g:hasErrors>
 
 		<g:form method="post" class="form-horizontal" role="form" >
-			<g:hiddenField name="id" value="${foodInstance?.id}" />
-			<g:hiddenField name="version" value="${foodInstance?.version}" />
+			<g:hiddenField name="id" value="${paymentMethodsInstance?.id}" />
+			<g:hiddenField name="version" value="${paymentMethodsInstance?.version}" />
 			<g:hiddenField name="_method" value="PUT" />
 			
 			<g:render template="form"/>
